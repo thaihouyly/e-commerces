@@ -1,0 +1,225 @@
+
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --off-white: #f8f7f5;
+    --mid: #e8e5e0;
+    --text-muted: #888;
+    --accent: #c8a96e;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Montserrat', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--white);
+    color: var(--black);
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── TOP BAR ── */
+  
+
+  /* ── PROMO BANNER ── */
+  .promo {
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 10px;
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb {
+    padding: 16px 40px;
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: .06em;
+    display: flex; gap: 8px; align-items: center;
+  }
+  .breadcrumb a { color: var(--text-muted); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--black); }
+  .breadcrumb span { color: var(--mid); }
+
+  /* ── HERO CONTACT ── */
+  .contact-hero {
+    text-align: center;
+    padding: 60px 40px 40px;
+    animation: fadeUp .7s ease both;
+  }
+  .contact-hero h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(48px, 7vw, 80px);
+    font-weight: 300;
+    letter-spacing: .04em;
+    margin-bottom: 20px;
+  }
+  .contact-hero p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* ── MAP SECTION ── */
+  .map-section {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    margin: 40px 0;
+    animation: fadeUp .7s .15s ease both;
+  }
+  .map-placeholder {
+    width: 100%; height: 100%;
+    background: linear-gradient(135deg, #e8ecef 0%, #dde3e8 40%, #c8d0d8 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  /* Decorative map grid lines */
+  .map-placeholder::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(150,165,180,.25) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(150,165,180,.25) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .map-placeholder::after {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(150,165,180,.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(150,165,180,.12) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  /* Roads */
+  .map-roads {
+    position: absolute; inset: 0; pointer-events: none;
+  }
+  .map-roads svg { width: 100%; height: 100%; opacity: .6; }
+
+  .info-card {
+    position: absolute;
+    top: 50%; left: 40px;
+    transform: translateY(-50%);
+    background: var(--white);
+    padding: 28px 32px;
+    min-width: 280px;
+    box-shadow: 0 8px 40px rgba(0,0,0,.15);
+    z-index: 10;
+    animation: slideIn .6s .3s ease both;
+  }
+  @keyframes slideIn { from { opacity:0; transform: translateY(-50%) translateX(-20px); }
+   to { opacity:1; transform: translateY(-50%) translateX(0); } }
+
+  .info-card address {
+    font-style: normal;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--black);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .info-card .phone {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+  }
+  .info-card .hours {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+  .btn-direction {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    padding: 11px 24px;
+    font-size: 10px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    cursor: pointer;
+    border: none;
+    transition: background .2s, transform .15s;
+    text-decoration: none;
+  }
+  .btn-direction:hover { background: var(--accent); transform: translateY(-1px); }
+
+  /* Map pin */
+  .map-pin {
+    position: absolute;
+    top: 42%; left: 52%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    animation: bounce 1.5s .8s ease-in-out infinite alternate;
+  }
+  @keyframes bounce { from { transform: translate(-50%,-50%); } to { transform: translate(-50%, -58%); } }
+  .map-pin svg { width: 32px; height: 32px; filter: drop-shadow(0 4px 8px rgba(0,0,0,.3)); }
+
+  /* City labels on map */
+  .map-label {
+    position: absolute;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    color: rgba(60,70,80,.7);
+    letter-spacing: .06em;
+    font-weight: 500;
+    pointer-events: none;
+    z-index: 4;
+  }
+
+  /* ── EMAIL FORM ── */
+  
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SUCCESS TOAST ── */
+  .toast {
+    position: fixed; bottom: 32px; left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--black);
+    color: var(--white);
+    padding: 14px 28px;
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 0;
+    opacity: 0;
+    transition: all .4s cubic-bezier(.22,1,.36,1);
+    z-index: 1000;
+    pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    nav, .topbar, .breadcrumb, .email-section, footer { padding-left: 20px; padding-right: 20px; }
+    .nav-links { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .insta-grid { grid-template-columns: repeat(3, 1fr); }
+    .info-card { left: 16px; min-width: 240px; }
+  }
+  @media (max-width: 480px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .insta-grid { grid-template-columns: repeat(2, 1fr); }
+  }

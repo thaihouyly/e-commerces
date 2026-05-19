@@ -1,0 +1,32 @@
+.team-section { padding: 0 40px 80px; }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .team-card { text-align: center; }
+  .team-card-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%);
+    transition: filter .4s, transform .4s;
+    border-radius: 1px;
+  }
+  .team-card:hover .team-card-img { filter: grayscale(0%); transform: translateY(-4px); }
+  .team-card h3 {
+    margin-top: 16px;
+    font-size: 11px;
+    letter-spacing: .18em;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .team-card p {
+    font-size: 11px;
+    color: var(--mid);
+    letter-spacing: .1em;
+    margin-top: 4px;
+  }

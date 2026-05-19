@@ -1,0 +1,93 @@
+ footer {
+    background: black;
+    color: #bbb;
+    padding: 60px 40px 40px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 1.4fr;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  footer h5 {
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 18px;
+    font-weight: 600;
+  }
+  footer ul { list-style: none; }
+  footer ul li { margin-bottom: 10px; }
+  footer ul a {
+    text-decoration: none;
+    color: #888;
+    font-size: 12px;
+    letter-spacing: .05em;
+    transition: color .2s;
+  }
+  footer ul a:hover { color: var(--accent); }
+  .newsletter-row {
+    display: flex;
+    gap: 0;
+    margin-top: 16px;
+  }
+  .newsletter-row input {
+    flex: 1;
+    padding: 10px 14px;
+    border: 1px solid #333;
+    background: transparent;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: .08em;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .newsletter-row input:focus { border-color: var(--accent); }
+  .newsletter-row button {
+    background: var(--accent);
+    border: none;
+    color: #fff;
+    padding: 10px 18px;
+    font-size: 10px;
+    letter-spacing: .18em;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .2s;
+  }
+  .newsletter-row button:hover { background: #a3834a; }
+  .footer-socials { display: flex; gap: 14px; margin-top: 20px; }
+  .footer-socials a {
+    width: 32px; height: 32px;
+    border: 1px solid #333;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: border-color .2s;
+  }
+  .footer-socials a:hover { border-color: var(--accent); }
+  .footer-socials svg { width: 14px; height: 14px; fill: #888; }
+  .footer-bottom {
+    border-top: 1px solid #2a2a2a;
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-bottom p { font-size: 11px; color: #555; letter-spacing: .06em; }
+  .footer-bottom-links { display: flex; gap: 24px; }
+  .footer-bottom-links a { color: #555; text-decoration: none; font-size: 11px; letter-spacing: .06em; }
+  .footer-bottom-links a:hover { color: var(--accent); }
+  .pay-icons { display: flex; gap: 10px; align-items: center; }
+  .pay-icons span {
+    background: #fff;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 9px;
+    font-weight: 700;
+    color: #333;
+    letter-spacing: .05em;
+  }
